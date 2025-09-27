@@ -1,0 +1,221 @@
+:root {
+    /* M3 色彩系统 - 设定主色 */
+    --color-primary: #00668b; /* 科技蓝 */
+    --color-on-primary: #ffffff;
+    --color-surface: #f7f9fd;   /* 浅背景 */
+    --color-on-surface: #1a1c1e;
+    --color-surface-container-high: #e2e2e7; /* 卡片/提升背景 */
+    --color-outline: #71787e;
+    
+    /* M3 排版 - 字体 */
+    --font-family-primary: 'Roboto', sans-serif;
+
+    /* M3 形状 - 圆角 */
+    --shape-medium: 12px;
+    --shape-large: 16px;
+    
+    /* M3 间距 */
+    --spacing-large: 24px;
+    --spacing-extra-large: 48px;
+}
+
+/* 基础重置与字体 */
+body {
+    font-family: var(--font-family-primary);
+    line-height: 1.6;
+    margin: 0;
+    padding-top: 64px; /* 为固定导航栏留出空间 */
+    background-color: var(--color-surface);
+    color: var(--color-on-surface);
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 var(--spacing-large);
+}
+
+/* --- 导航栏 (App Bar) --- */
+.app-bar {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    background-color: var(--color-primary);
+    color: var(--color-on-primary);
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* M3 阴影 */
+    z-index: 1000;
+}
+
+.app-bar .container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 64px; /* M3 标准高度 */
+}
+
+.app-bar h1 {
+    font-size: 1.5rem;
+    font-weight: 500;
+    margin: 0;
+}
+
+.app-bar nav a {
+    color: var(--color-on-primary);
+    text-decoration: none;
+    padding: 0 16px;
+    font-weight: 500;
+}
+
+/* --- 英雄区 (Hero Section) --- */
+.hero-section {
+    padding: var(--spacing-extra-large) 0;
+    text-align: center;
+    margin-bottom: var(--spacing-extra-large);
+}
+
+.display-title {
+    font-size: 3rem; /* M3 大标题 */
+    font-weight: 700;
+    margin-bottom: 0.5rem;
+    color: var(--color-primary);
+}
+
+.headline {
+    font-size: 1.5rem;
+    font-weight: 400;
+    margin-bottom: var(--spacing-large);
+}
+
+/* --- M3 按钮 (Filled Button) --- */
+.filled-button {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    background-color: var(--color-primary);
+    color: var(--color-on-primary);
+    padding: 10px 24px;
+    border: none;
+    border-radius: 20px; /* M3 标志性大圆角 */
+    text-decoration: none;
+    font-weight: 500;
+    transition: box-shadow 0.3s, background-color 0.3s;
+    box-shadow: 0 3px 6px rgba(0, 0, 0, 0.2);
+}
+
+.filled-button:hover {
+    background-color: #004d66; /* 略深 */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+}
+
+/* --- 内容区块 (Section Card) --- */
+section {
+    padding: var(--spacing-extra-large) 0;
+}
+
+.section-card {
+    background-color: var(--color-surface);
+    border-radius: var(--shape-large);
+    padding: var(--spacing-large);
+    margin-bottom: var(--spacing-extra-large);
+    border: 1px solid var(--color-outline); /* 边框体现卡片分离感 */
+}
+
+.elevated-card {
+    /* 模拟 M3 提升卡片，用于突出项目 */
+    background-color: var(--color-surface-container-high);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    border: none;
+}
+
+.section-title {
+    font-size: 2rem;
+    font-weight: 700;
+    color: var(--color-primary);
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    margin-top: 0;
+    margin-bottom: var(--spacing-large);
+}
+
+/* --- 标签 (Chips) --- */
+.expertise-chips {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    margin-top: var(--spacing-large);
+}
+
+.chip {
+    background-color: var(--color-primary);
+    color: var(--color-on-primary);
+    padding: 6px 16px;
+    border-radius: 8px; /* 较小的圆角 */
+    font-size: 0.9rem;
+    font-weight: 500;
+}
+
+/* --- 贡献列表 --- */
+.key-contributions {
+    list-style: none;
+    padding: 0;
+    margin-top: var(--spacing-large);
+}
+
+.key-contributions li {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 10px;
+}
+
+.key-contributions .material-symbols-outlined {
+    color: var(--color-primary);
+    font-size: 20px;
+}
+
+/* --- 底部 (Footer) --- */
+footer {
+    background-color: var(--color-on-surface);
+    color: var(--color-surface);
+    padding: var(--spacing-extra-large) 0 var(--spacing-large);
+    text-align: center;
+}
+
+.footer-content {
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+    padding-top: var(--spacing-large);
+}
+
+.contact-buttons {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    margin: var(--spacing-large) 0;
+}
+
+.icon-button {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    color: var(--color-surface);
+    text-decoration: none;
+    font-weight: 500;
+}
+
+.icon-button:hover {
+    color: var(--color-primary);
+}
+
+.copyright {
+    margin-top: var(--spacing-large);
+    font-size: 0.9rem;
+    opacity: 0.7;
+}
+
+hr {
+    border: none;
+    height: 1px;
+    background-color: var(--color-outline);
+    margin: 0 var(--spacing-large);
+}
